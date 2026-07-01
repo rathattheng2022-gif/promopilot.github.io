@@ -1,0 +1,231 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #040d06;
+      --card:   #064431;
+      --green:  #10c875;
+      --lime:   #d5ff88;
+      --muted:  rgba(255, 255, 255, 0.45);
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1rem;
+    }
+
+    /* ── Header ── */
+    .page-header { text-align: center; margin-bottom: 2rem; }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(16, 200, 117, 0.1);
+      border: 1px solid rgba(16, 200, 117, 0.22);
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .logo-badge span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--green);
+    }
+
+    .page-header h1 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--lime);
+      letter-spacing: -0.4px;
+      margin-bottom: 6px;
+    }
+    .page-header p { font-size: 13px; color: var(--muted); }
+
+    /* ── Coupon card ── */
+    .coupon-card {
+      width: 100%;
+      max-width: 580px;
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid rgba(16, 200, 117, 0.2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .coupon-top { display: flex; }
+
+    /* Left ribbon */
+    .ribbon {
+      width: 52px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ribbon-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #040d06;
+      text-transform: uppercase;
+    }
+
+    /* Form grid */
+    .form-area { flex: 1; padding: 1.5rem 1.5rem 1.5rem 1.25rem; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--lime);
+    }
+
+    .form-group input {
+      background: rgba(0, 0, 0, 0.30);
+      border: 1px solid rgba(16, 200, 117, 0.30);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #fff;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s;
+      color-scheme: dark;
+    }
+    .form-group input::placeholder { color: rgba(255, 255, 255, 0.28); }
+    .form-group input:focus { border-color: var(--green); }
+    .form-group input.error { border-color: #ff6b6b; }
+
+    #pp-code { text-transform: uppercase; letter-spacing: 1.5px; }
+
+    /* ── Perforated separator ── */
+    .perforation { display: flex; align-items: center; }
+    .notch {
+      width: 22px;
+      height: 22px;
+      background: var(--bg);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .notch-l { margin-left: -11px; }
+    .notch-r { margin-right: -11px; }
+    .perf-line { flex: 1; border-top: 2px dashed rgba(16, 200, 117, 0.22); }
+
+    /* ── Bottom action bar ── */
+    .coupon-bottom {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .deal-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .btn-add {
+      background: var(--green);
+      color: #040d06;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-add:hover  { background: #0db567; }
+    .btn-add:active { transform: scale(0.97); }
+
+    /* ── Success overlay ── */
+    .success-overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: var(--card);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+      padding: 2rem;
+    }
+    .success-overlay.show { display: flex; }
+
+    .success-icon {
+      width: 68px;
+      height: 68px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--lime);
+    }
+    .success-sub {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 340px;
+      line-height: 1.65;
+    }
+
+    .btn-reset {
+      margin-top: 4px;
+      background: transparent;
+      border: 1px solid rgba(16, 200, 117, 0.35);
+      border-radius: 8px;
+      padding: 10px 24px;
+      color: var(--green);
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-reset:hover { background: rgba(16, 200, 117, 0.1); }
+
+    /* ── Shake animation for validation ── */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25%       { transform: translateX(-4px); }
+      75%       { transform: translateX(4px); }
+    }
+    .shake { animation: shake 0.32s ease; }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .ribbon { display: none; }
+      .form-area { padding: 1.25rem; }
+    }

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="style.css">
+    <title>PromoPilot - Find Best Deals in Cambodia</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #40b736;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: #10c875;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #40b736;
+    border-radius: 4px;
+    color: white;
+}
+
+/* About Section */
+.about {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgb(132, 220, 120) 100%);
+    padding: 100px 0 20px 0;
+    text-align: center;
+    flex: 1;
+    margin-top: 60px;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1rem;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-img {
+    width: 20rem;
+    height: 20rem;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.about-info p {
+    font-size: 1.3rem;
+    margin: 0 2rem;
+    text-align: justify;
+}
+
+.cta-button {
+    border: none;
+    outline: 0;
+    padding: 12px 30px;
+    margin: 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #10c875;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #0db567;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 200, 117, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: block;
+    }
+
+    .logo {
+        text-align: center;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .nav-links li {
+        margin-right: 10px;
+    }
+
+    .about {
+        margin-top: 80px;
+    }
+
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+    }
+
+    .about-info {
+        flex-direction: column;
+        text-align: center;
+        margin: 1rem;
+    }
+
+    .about-img {
+        width: 60%;
+        height: 60%;
+        margin-bottom: 1rem;
+    }
+
+    .about-info p {
+        margin: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        margin: 1rem auto;
+        width: 12rem;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PromoPilot</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about" id="home">
+        <h1>Welcome to PromoPilot</h1>
+        <p style="font-weight: bold">
+            Your coupon website with the best deals!
+        </p>
+        <div class="about-info">
+            <div class="about-img">
+                <img src="./img/IMG_3455-removebg-preview.png" alt="PromoPilot Logo">
+            </div>
+            <div>
+                <p>
+                    PromoPilot is a website for people that are looking for a cost effective
+                    solution to save money with good deals, promotions and offers on products.
+                    Find amazing coupons and discounts from your favorite stores!
+                </p>
+                <!-- ✅ BUTTON LINKS TO MAIN-DEALS.HTML -->
+                <a href="main-deals.php" class="cta-button">Find coupons now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PromoPilot. All rights reserved.</p>
+    </footer>
+</body>
+</html>
